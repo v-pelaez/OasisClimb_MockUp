@@ -1,0 +1,15 @@
+bootstrap/js
+bootstrap/scss
+bootstrap/dist/css/
+bootstrap/dist/js/
+!bootstrap/dist/js/bootstrap.bundle.min.js
+
+
+*.scss
+*.map
+
+
+node_modules/
+.DS_Store
+Thumbs.db
+

@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Oasis Climb</title>
+    <link rel="icon" href="src/favicon.png" type="image/png" sizes="32x32" />
+    <link rel="stylesheet" href="scss/custom.css" />
+    <script
+      defer
+      src="bootstrap/dist/js/bootstrap.bundle.min.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <script defer src="myScript.js"></script>
+  </head>
+  <body>
+    <header class="container-fluid bg-dark fixed-top">
+      <nav class="navbar navbar-expand-lg navbar-dark">
+        <!--Logo -->
+        <a class="navbar-brand" href="index.html">
+          <img
+            src="src/OasisClimblogo.png"
+            alt="OasisClimb"
+            style="width: 100%; max-height: 50px"
+          />
+        </a>
+        <!--Boton desplegable -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                aria-current="page"
+                href="index.html#novedades"
+                >Novedades</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#ranking">Ranking</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="inscripcion.html"
+                >Registra tus marcas</a
+              >
+            </li>
+          </ul>
+          <!--Buscador -->
+          <form class="nav item d-none d-md-flex flex-nowrap" role="search">
+            <input
+              class="form-control me-2"
+              type="search"
+              placeholder="Buscar..."
+              aria-label="Buscar"
+            />
+
+            <button
+              type="button"
+              class="btn btn-primary"
+              data-bs-toggle="popover"
+              data-bs-title="Acción no disponible"
+              data-bs-content="La búsqueda no está disponible en este prototipo."
+            >
+              <i class="fas fa-magnifying-glass"></i>
+            </button>
+          </form>
+        </div>
+      </nav>
+    </header>
+    <div
+      class="container-fluid bg-primary text-dark-emphasis text-center mt-5 pt-5 mp-1 py-2 shadow"
+    >
+      <h5 class="">
+        Haz que tu huella perdure. Registra tu marca, deja tu legado en la roca.
+      </h5>
+    </div>
+    <img
+      src="src/mountain-8488489_1280.jpg"
+      class="w-100 overflow-hidden cabecera"
+      alt=""
+    />
+
+    <main
+      class="bg-dark fondo-inscripcion min-vh-100 d-flex flex-wrap justify-content-center align-items-start py-5"
+    >
+      <div class="container-fluid">
+      <div
+        class="row col-12 bg-primary text-black text-uppercase p-5 recorte-bandera my-1 mb-5"
+      >
+        <h3 class="fw-bold fst-italic">Registro</h3>
+      </div>
+      </div>
+      <div class="container w-75 bg-secondary text-white p-4 rounded col-md-8">
+        <form class="needs-validation row" novalidate>
+          <h5 class="col-12 mb-4">
+            Inscripción de marcas para rutas de senderismo o escalada
+          </h5>
+
+          <!-- Columna izquierda -->
+          <div class="col-md-6">
+            <div class="mb-3">
+              <label for="routeName">Nombre de la ruta</label>
+              <input
+                type="text"
+                class="form-control"
+                id="routeName"
+                placeholder="Nombre de la ruta"
+                required
+              />
+              <div class="invalid-feedback">
+                Por favor, ingresa el nombre de la ruta.
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="location">Ubicación (pueblo, parque, montaña)</label>
+              <input
+                type="text"
+                class="form-control"
+                id="location"
+                placeholder="Ubicación"
+                required
+              />
+              <div class="invalid-feedback">
+                Por favor, indica una ubicación válida.
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="markerType">Tipo de marca</label>
+              <select class="form-select" id="markerType" required>
+                <option value="" disabled selected>Selecciona el tipo</option>
+                <option value="senderismo">Senderismo</option>
+                <option value="ferrata">Vía Ferrata</option>
+                <option value="escalada">Escalada</option>
+                <option value="mixto">Mixto</option>
+              </select>
+              <div class="invalid-feedback">Selecciona un tipo de marca.</div>
+            </div>
+
+            <div class="mb-3">
+              <label for="difficulty">Dificultad</label>
+              <select class="form-select" id="difficulty" required>
+                <option value="" disabled selected>
+                  Selecciona la dificultad
+                </option>
+                <option value="facil">Fácil</option>
+                <option value="intermedia">Intermedia</option>
+                <option value="dificil">Difícil</option>
+              </select>
+              <div class="invalid-feedback">
+                Selecciona el nivel de dificultad.
+              </div>
+            </div>
+          </div>
+
+          <!-- Columna derecha -->
+          <div class="col-md-6">
+            <div class="mb-3">
+              <label for="length">Longitud de la ruta (km)</label>
+              <input
+                type="number"
+                class="form-control"
+                id="length"
+                placeholder="Longitud en kilómetros"
+                min="0"
+                step="0.1"
+                required
+              />
+              <div class="invalid-feedback">Indica la longitud de la ruta.</div>
+            </div>
+
+            <div class="mb-3">
+              <label for="duration">Duración estimada (horas)</label>
+              <input
+                type="number"
+                class="form-control"
+                id="duration"
+                placeholder="Duración aproximada"
+                min="0"
+                step="0.1"
+                required
+              />
+              <div class="invalid-feedback">Indica la duración estimada.</div>
+            </div>
+
+            <div class="mb-3">
+              <label for="season">Época recomendada</label>
+              <select class="form-select" id="season" required>
+                <option value="" disabled selected>Selecciona la época</option>
+                <option value="primavera">Primavera</option>
+                <option value="verano">Verano</option>
+                <option value="otoño">Otoño</option>
+                <option value="invierno">Invierno</option>
+                <option value="todo_el_anyo">Todo el año</option>
+              </select>
+              <div class="invalid-feedback">
+                Selecciona una época recomendada.
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="contact">Contacto del responsable</label>
+              <input
+                type="email"
+                class="form-control"
+                id="contact"
+                placeholder="Correo electrónico"
+                required
+              />
+              <div class="invalid-feedback">Proporciona un correo válido.</div>
+            </div>
+          </div>
+
+          <!-- Campo descripción ocupa el ancho completo -->
+          <div class="col-12 mb-3">
+            <label for="description">Descripción de la marca</label>
+            <textarea
+              class="form-control"
+              id="description"
+              rows="3"
+              placeholder="Describe la marca o detalles importantes"
+              required
+            ></textarea>
+            <div class="invalid-feedback">La descripción es obligatoria.</div>
+          </div>
+
+          <div class="col-12 mb-3">
+            <input
+              type="checkbox"
+              class="form-check-input"
+              id="termsCheck"
+              required
+            />
+            <label class="form-check-label" for="termsCheck">
+              Acepto los términos y condiciones
+            </label>
+            <div class="invalid-feedback">
+              Debes aceptar los términos antes de enviar.
+            </div>
+          </div>
+
+          <div class="col-12 text-end">
+            <button class="btn btn-primary" type="submit">
+              Inscribir marca
+            </button>
+          </div>
+        </form>
+      </div>
+    </main>
+    <footer
+      class="text-center text-lg-start border border-white pt-4 bg-dark text-white"
+    >
+      <!-- Grid container -->
+      <div class="container p-4 d-flex justify-content-around">
+        <!--Grid row-->
+        <div class="row">
+          <!--Grid column-->
+          <div class="col-lg-4 col-md-4 mb-4 mb-lg-0">
+            <h5 class="text-uppercase mb-4 fw-bold">Oasis Climb</h5>
+
+            <ul class="list-unstyled mb-4">
+              <li>
+                <a href="index.html#novedades" class="text-white">Novedades</a>
+              </li>
+              <li>
+                <a href="index.html#ranking" class="text-white">Ranking</a>
+              </li>
+              <li>
+                <a href="inscripcion.html" class="text-white"
+                  >Registra tus Marcas</a
+                >
+              </li>
+            </ul>
+          </div>
+          <!--Grid column-->
+          <div
+            class="col-lg-4 col-md-4 mb-4 mb-lg-0 text-white justify-content-start"
+          >
+            <h5 class="text-uppercase mb-4 fw-bold">Síguenos</h5>
+            <div
+              class="d-flex flex-column align-items-center align-items-lg-start justify-content-around gap-1"
+            >
+              <a
+                href="https://www.instagram.com/"
+                class="text-white d-flex align-items-center"
+                target="_blank"
+                rel="noopener"
+              >
+                <i class="fab fa-instagram fa-lg me-2"></i> Instagram
+              </a>
+              <a
+                href="https://www.facebook.com/"
+                class="text-white d-flex align-items-center"
+                target="_blank"
+                rel="noopener"
+              >
+                <i class="fab fa-facebook-f fa-lg me-2"></i> Facebook
+              </a>
+              <a
+                href="https://x.com/"
+                class="text-white d-flex align-items-center"
+                target="_blank"
+                rel="noopener"
+              >
+                <i class="fab fa-x-twitter fa-lg me-2"></i> Twitter
+              </a>
+            </div>
+          </div>
+          <!--Grid column-->
+          <div class="col-lg-4 col-md-4 mb-4 mb-lg-0">
+            <h5 class="text-uppercase mb-4 fw-bold">
+              Suscribete a nuestro boletin de Novedades
+            </h5>
+
+            <div class="form-outline form-white mb-4">
+              <input
+                type="email"
+                id="form5Example2"
+                class="form-control"
+                placeholder="correo@electronico.com"
+              />
+            </div>
+
+            <button
+              type="button"
+              class="btn btn-primary text-dark col-12 btn-block"
+              data-bs-toggle="popover"
+              data-bs-title="Acción no disponible"
+              data-bs-content="La suscripción no está disponible en este prototipo."
+            >
+              Subscribete
+            </button>
+          </div>
+        </div>
+        <!--Grid row-->
+      </div>
+      <!-- Grid container -->
+
+      <!-- Copyright -->
+      <div class="text-center p-3 border-top border-white">
+        <h5 class="text-uppercase mb-4 fw-bold">Información legal</h5>
+        <p class="text-center">
+          Este trabajo ha sido elaborado por V. Peláez con fines académicos. La
+          autoría de todo el contenido corresponde exclusivamente a V. Peláez.
+          El trabajo no tiene carácter comercial ni busca obtener beneficio
+          económico alguno. Las imágenes utilizadas provienen de fuentes como
+          Flaticon y Freepik, y se emplean respetando sus licencias de uso
+          gratuito y atribución.Queda prohibida la reproducción o distribución
+          del contenido para fines comerciales sin el consentimiento explícito
+          del autor. Se agradece la adecuada atribución de las imágenes conforme
+          a las condiciones de las plataformas.
+        </p>
+        <a class="text-white" href="https://github.com/v-pelaez"
+          ><i class="fab fa-github fa-lg me-2"></i>Github</a
+        >
+      </div>
+    </footer>
+    <!-- End of .container -->
+  </body>
+</html>
