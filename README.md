@@ -2,7 +2,7 @@
 
 Sitio web desarrollado para el módulo **Diseño de Interfaces Web** (DIW) en DAW.
 
-Este proyecto simula la web de un rocódromo y está pensado para un público joven y dinámico relacionado con el mundo de la escalada. La interfaz, la identidad visual y la experiencia de usuario siguen la **Guía de Estilos** diseñada específicamente para Oasis Climb, buscando reflejar los valores de aventura, comunidad y superación personal.
+Este proyecto simula la web de un blog para escaladores y está pensado para un público joven y dinámico relacionado con el mundo de la escalada. La interfaz, la identidad visual y la experiencia de usuario siguen la **Guía de Estilos** diseñada específicamente para Oasis Climb, buscando reflejar los valores de aventura, comunidad y superación personal.
 
 ## ✨ Identidad visual y guía de estilo
 
