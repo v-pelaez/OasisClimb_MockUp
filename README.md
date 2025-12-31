@@ -33,8 +33,7 @@ OasisClimb_MockUp/
 │ └─ bootstrap.bundle.min.js
 ├─ scss/
 │ └─ custom.css
-├─ src/
-│ └─ favicon.png
+├─ assets/
 ├─ index.html
 ├─ inscripcion.html
 ├─ myScript.js
