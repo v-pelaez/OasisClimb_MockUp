@@ -1,0 +1,196 @@
+// Custom.scss
+
+// Sobrescribir variables por defecto de Bootstrap (las funciones no estarán disponibles aún)
+$primary: #f8c52d; // Color primario personalizado amarillo oscuro
+$form-invalid-color: #fd9d9d; // Color para formularios inválidos (rojo claro)
+$form-valid-color: rgb(145, 253, 145); // Color para formularios válidos (verde claro)
+$border-radius: 0.1rem; // Radio de borde muy pequeño para bordes ligeramente redondeados
+
+// Definición de fuente personalizada 'LemonMilk' usando @font-face
+@font-face {
+  font-family: LemonMilk;
+  src: url('../lemon_milk/LEMONMILK-Regular.otf');
+}
+
+// Importar Bootstrap y fuente externa de Google Fonts 'Outfit'
+@import '../../../node_modules/bootstrap/scss/bootstrap';
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+// Estilos para enlaces: quitar subrayado predeterminado
+a {
+  text-decoration: none;
+}
+
+// Estilos generales para el cuerpo del documento
+body {
+  font-family: 'Outfit', sans-serif; // Uso de la fuente 'Outfit' para todo el texto
+  background-color: #f8f9fa; // Fondo claro general
+  color: #212529; // Color oscuro para el texto principal
+}
+
+// Ajustes para el carrusel personalizado (.ajuste-carrusel)
+.ajuste-carrusel {
+  width: 100%; // Ancho total del contenedor del carrusel
+  max-height: 82.5vh; // Altura máxima ajustada al 82.5% de la altura de la ventana
+  overflow: hidden; // Ocultar contenido desbordado
+  justify-content: center; // Centrar contenido horizontalmente
+  align-items: center; // Centrar contenido verticalmente
+
+  // Imágenes dentro de los ítems del carrusel
+  .carousel-item img {
+    width: 100%; // Imagen ocupa todo el ancho del contenedor
+    height: 100%; // Imagen ocupa toda la altura del contenedor
+    object-fit: cover; // Imagen recortada para cubrir área sin deformarse
+  }
+
+  // Degradado superpuesto para oscurecer parte inferior del carrusel
+  .carousel-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0; // Ocupa toda el área del ítem
+    background: linear-gradient(
+      rgba(0, 0, 0, 0),
+      rgba(0, 0, 0, 0.5)
+    ); // Degradado transparente a semitransparente negro
+    pointer-events: none; // No interfiere con eventos del ratón
+  }
+
+  // Contenido de texto (caption) centrado y posicionado encima del degradado
+  .carousel-caption {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0; // Ocupa el área completa
+    display: flex;
+    justify-content: center; // Centrar horizontalmente
+    align-items: center; // Centrar verticalmente
+    z-index: 2; // Se muestra encima del degradado
+    text-align: center; // Texto centrado
+  }
+}
+
+// Estilo para texto del carrusel con fuente 'LemonMilk' y tamaño grande
+.letra-carrusel {
+  font-family: 'LemonMilk', sans-serif;
+  font-size: 7rem; // Tamaño muy grande de fuente
+  font-style: italic; // Texto en cursiva
+  text-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3); // Sombra amplia para dar profundidad
+  user-select: none; // Evitar selección de texto
+}
+
+// Clase para aplicar sombra leve al texto
+.texto-sombra {
+  text-shadow: 2px 2px 4px #00000054; // Sombra negra semitransparente
+}
+
+// Recorte con forma poligonal para elementos, usando clip-path (por ejemplo, para banderas)
+.recorte-bandera {
+  width: 100%; // Ancho completo
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    85% 100%,
+    0% 100%
+  ); // Recorte triangular en la esquina inferior derecha
+  font-family: 'LemonMilk', sans-serif; // Fuente personalizada
+}
+
+// Imágenes de tarjetas (.card-img-top) con tamaño fijo y recorte para cubrir sin distorsión
+.card-img-top {
+  width: 100%; // Ancho completo
+  height: 250px; // Altura fija
+  object-fit: cover; // Recorta la imagen para llenar el área sin deformar
+}
+
+// Cursor cambia a puntero para todas las tarjetas (indica que son clicables)
+.card {
+  cursor: pointer;
+}
+
+// Imagen de cabecera con tamaño fijo y ajuste en posición y recorte
+.cabecera {
+  height: 400px; // Altura fija para la cabecera
+  object-fit: cover; // Recortar la imagen para que cubra área
+  object-position: center; // Centrar la parte visible de la imagen
+}
+
+// Estilo para paginación: cambiar cursor a puntero para links de paginación
+.page-item .page-link {
+  cursor: pointer;
+}
+
+// cross fade
+/* el item SI debe tener tamaño */
+/* Anula completamente el movimiento lateral */
+.carousel-item {
+  margin-right: 0 !important;
+  transform: none !important;
+  display: block !important;
+  float: none !important;
+}
+
+/* Evita que Bootstrap desplace los items */
+.carousel-item-next,
+.carousel-item-prev,
+.carousel-item.active {
+  transform: none !important;
+}
+/* El carrusel debe tener altura */
+#miCarrusel {
+  background-color: #ff0000; /* para ver el área del carrusel */
+  height: 60vh; /* ajusta a tu diseño */
+}
+
+.carousel-inner,
+.carousel-item {
+  height: 100%;
+}
+
+/* Vídeos superpuestos */
+.carousel-item video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.carousel-item {
+  opacity: 1;
+  z-index: 1;
+  transition: opacity 0.3s linear;
+}
+/* Solo el activo se ve */
+.carousel-item.active {
+  opacity: 1;
+  z-index: 2;
+}
+.carousel-item.ended {
+  // opacity: 1;
+  // z-index: 2;
+  animation: fade 0.3s linear forwards;
+}
+@keyframes fade {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.card {
+  transition: transform 0.3s;
+}
+.card:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s;
+}
+
+body,
+main {
+  background-color: transparent !important;
+}
