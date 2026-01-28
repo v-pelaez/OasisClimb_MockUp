@@ -1,54 +1,48 @@
-# 🏔️ Oasis Climb MockUp
+# oasis_climb_vue
 
-Sitio web desarrollado para el módulo **Diseño de Interfaces Web** (DIW) en DAW.
+This template should help get you started developing with Vue 3 in Vite.
 
-Este proyecto simula la web de un blog para escaladores y está pensado para un público joven y dinámico relacionado con el mundo de la escalada. La interfaz, la identidad visual y la experiencia de usuario siguen la **Guía de Estilos** diseñada específicamente para Oasis Climb, buscando reflejar los valores de aventura, comunidad y superación personal.
+## Recommended IDE Setup
 
-## ✨ Identidad visual y guía de estilo
+[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
 
-La guía de estilos ha sido realizada específicamente para este trabajo y define los siguientes aspectos:
+## Recommended Browser Setup
 
-- **Público objetivo**: escaladores novatos y experimentados, entusiastas de la aventura y la comunidad.
-- **Paleta de colores**: uso predominante de amarillo vibrante (`#f8c52d`), negro y tonos neutros, para destacar energía y dinamismo.
-- **Tipografía**: fuentes modernas (Lemon Milk para títulos y Outfit para textos principales) que aportan personalidad y legibilidad.
-- **Logotipo**: inspirado en la forma de un mosquetón, símbolo universal de escalada, juventud y seguridad.
-- **Estructura visual**: menús horizontales fijos, header reticular, tarjetas de artículos con imágenes evocadoras.
-- **Imágenes**: todas las imágenes mostradas en el proyecto proceden de **Freepik** y han sido seleccionadas para motivar e inspirar, optimizadas para web según la guía.
-- **Componentes**: botones, rankings y registro de marcas siguiendo la estética y el tono juvenil/motivador definido.
+- Chromium-based browsers (Chrome, Edge, Brave, etc.):
+  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
+  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
+- Firefox:
+  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
+  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
 
-## 🛠️ Tecnologías empleadas
+## Type Support for `.vue` Imports in TS
 
-- HTML5 y CSS3 (con Sass)
-- Bootstrap 5 (solo archivos necesarios en producción)
-- GitHub Pages (para el despliegue online)
+TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
 
-## 📦 Estructura del repositorio
+## Customize configuration
 
-```
-OasisClimb_MockUp/
-│
-├─ bootstrap/
-│ └─ dist/
-│ └─ js/
-│ └─ bootstrap.bundle.min.js
-├─ scss/
-│ └─ custom.css
-├─ assets/
-├─ index.html
-├─ inscripcion.html
-├─ myScript.js
-├─ OasisClimb-Guia deEstilos.pdf
-├─ .gitignore
-└─ README.md
+See [Vite Configuration Reference](https://vite.dev/config/).
+
+## Project Setup
+
+```sh
+npm install
 ```
 
-## 📚 Créditos
+### Compile and Hot-Reload for Development
 
-Desarrollado para el módulo **Diseño de Interfaces Web** por [v-pelaez](https://github.com/v-pelaez).  
-Guía de estilo, diseño visual y estructura elaborados por el autor este proyecto.  
-Imágenes proporcionadas por [Freepik](https://www.freepik.com).  
-Bootstrap y FontAwesome para componentes y recursos de interfaz.
+```sh
+npm run dev
+```
 
----
+### Type-Check, Compile and Minify for Production
 
-Para cualquier consulta sobre la guía de estilos o el diseño, puedes revisar la [Guia de Estilos](https://github.com/v-pelaez/OasisClimb_MockUp/blob/main/OasisClimb-Guia%20deEstilos.pdf)
+```sh
+npm run build
+```
+
+### Lint with [ESLint](https://eslint.org/)
+
+```sh
+npm run lint
+```
