@@ -6,7 +6,7 @@
           <h5 class="text-uppercase mb-4 fw-bold">Oasis Climb</h5>
           <ul class="list-unstyled mb-4">
             <li v-for="item in menuItems" :key="item.text">
-              <a :href="item.link" class="text-white">{{ item.text }}</a>
+              <a :href="item.href" class="text-white">{{ item.text }}</a>
             </li>
           </ul>
         </div>
@@ -77,7 +77,7 @@ const menuItems = [
   { text: 'Novedades', href: '#novedades'},
   { text: 'Ranking', href: '#ranking' },
   { text: 'Registra tus marcas', href: '#registro'},
-  {text: 'Sobre Nosotros', href:'#about-us'}
+  { text: 'Sobre Nosotros', href:'#about-us'}
 ]
 
 const socialLinks = [
