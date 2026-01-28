@@ -74,15 +74,16 @@ const email = ref('')
 const subscribeBtn = ref(null)
 
 const menuItems = [
-  { text: 'Novedades', link: 'index.html#novedades' },
-  { text: 'Ranking', link: 'index.html#ranking' },
-  { text: 'Registra tus Marcas', link: 'inscripcion.html' },
+  { text: 'Novedades', href: '#novedades'},
+  { text: 'Ranking', href: '#ranking' },
+  { text: 'Registra tus marcas', href: '#registro'},
+  {text: 'Sobre Nosotros', href:'#about-us'}
 ]
 
 const socialLinks = [
-  { name: 'Instagram', url: 'https://www.instagram.com/', icon: 'fab fa-instagram' },
-  { name: 'Facebook', url: 'https://www.facebook.com/', icon: 'fab fa-facebook-f' },
-  { name: 'Twitter', url: 'https://x.com/', icon: 'fab fa-x-twitter' },
+  { name: 'Instagram', url: '', icon: 'fab fa-instagram' },
+  { name: 'Facebook', url: '', icon: 'fab fa-facebook-f' },
+  { name: 'Twitter', url: '', icon: 'fab fa-x-twitter' },
 ]
 
 onMounted(() => {
