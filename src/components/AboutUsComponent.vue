@@ -11,7 +11,7 @@
       </div>
     </div>
 
-    <div class="container w-75 bg-dark text-white p-5 rounded-0 col-md-8 shadow-lg border-start border-custom-yellow border-4 mt-4">
+    <div class="container w-75  text-white p-5 rounded-0 col-md-8 border-start border-custom-yellow border-4 mt-4">
       <div class="row g-5 align-items-center">
         <div class="col-lg-6">
           <h4 class="text-custom-yellow fw-bold text-uppercase mb-4">Nuestra Historia y Misión</h4>
@@ -55,7 +55,6 @@ const videoPoster = new URL('../assets/videoposter.png', import.meta.url).href
 </script>
 
 <style scoped>
-/* Color de marca personalizado */
 .bg-custom-yellow {
   background-color: #f8c52d !important;
 }
@@ -83,14 +82,14 @@ const videoPoster = new URL('../assets/videoposter.png', import.meta.url).href
 /* Contenedor de video cuadrado y sólido */
 .video-frame {
   background: #000;
-  line-height: 0; /* Elimina espacios residuales debajo del video */
+  line-height: 0; 
 }
 
 video:focus {
   outline: none;
 }
 
-/* Placeholder color personalizado */
+
 ::placeholder {
   color: #adb5bd !important;
   opacity: 1;

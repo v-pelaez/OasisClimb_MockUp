@@ -23,9 +23,9 @@
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li v-for="link in navLinks" :key="link.text" class="nav-item">
             <a
-              :class="['nav-link', { active: link.active }]"
-              :aria-current="link.active ? 'page' : null"
+              :class="['nav-link', { active: activeSection === link.href.replace('#', '') }]"
               :href="link.href"
+              @click="activeSection = link.href.replace('#', '')"
             >
               {{ link.text }}
             </a>
@@ -59,39 +59,72 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, onUnmounted } from 'vue'
 import { CPopover } from '@coreui/vue'
 import { CIcon } from '@coreui/icons-vue'
 import { cilSearch } from '@coreui/icons'
-// Estado para el buscador
+
+// 1. Estado para el buscador y la sección activa
 const searchQuery = ref('')
-
-// Configuración de los links de navegación
-const navLinks = [
-  { text: 'Novedades', href: '#novedades', active: true },
-  { text: 'Ranking', href: '#ranking', active: false },
-  { text: 'Registra tus marcas', href: '#registro', active: false },
-  {text: 'Sobre Nosotros', href:'#about-us', active: false}
-]
-
-// Inicialización de Bootstrap (Popovers)
+const activeSection = ref('novedades') // Por defecto la primera
 const popoverBtn = ref(null)
 
+const navLinks = [
+  { text: 'Novedades', href: '#novedades' },
+  { text: 'Ranking', href: '#ranking' },
+  { text: 'Registra tus marcas', href: '#registro' },
+  { text: 'Sobre Nosotros', href: '#about-us' },
+]
+
+// 3. Lógica de ScrollSpy (Intersection Observer)
+let observer = null
+
 onMounted(() => {
-  // Asegúrate de que Bootstrap esté disponible globalmente o impórtalo
-  if (window.bootstrap) {
+  // Inicialización de Popover de Bootstrap
+  if (window.bootstrap && popoverBtn.value) {
     new window.bootstrap.Popover(popoverBtn.value)
   }
+
+  // Configuración del observador
+  const observerOptions = {
+    root: null,
+    rootMargin: '-20% 0px -70% 0px', // Margen para detectar la sección en la parte superior
+    threshold: 0,
+  }
+
+  observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      // Si la sección entra en el "foco" de la pantalla
+      if (entry.isIntersecting) {
+        activeSection.value = entry.target.id
+      }
+    })
+  }, observerOptions)
+
+  // Decimos al observador que vigile cada ID que definimos en los links
+  navLinks.forEach((link) => {
+    const id = link.href.replace('#', '')
+    const element = document.getElementById(id)
+    if (element) observer.observe(element)
+  })
+})
+
+onUnmounted(() => {
+  // Limpieza para evitar fugas de memoria
+  if (observer) observer.disconnect()
 })
 </script>
 
 <style scoped>
-/* Estilos específicos si los necesitas, 
-   aunque la mayoría vienen de Bootstrap */
+/* Estilos específicos */
 .navbar-brand svg {
   transition: transform 0.3s ease;
 }
 .navbar-brand:hover svg {
   transform: scale(1.05);
+}
+
+.nav-link.active {
+  color: #f0f0f0 !important;
 }
 </style>

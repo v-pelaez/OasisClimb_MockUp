@@ -95,12 +95,16 @@ onUnmounted(() => {
 .border-custom-yellow { border-color: #f8c52d !important; }
 .bg-black { background-color: #000 !important; }
 
-.hero-wrapper { height: 90vh; width: 100vw; position: relative; background: #000; }
+.hero-wrapper { 
+  height: 90vh; 
+  width: 100%; 
+  position: relative; 
+  background: #000; 
+}
 .slide-item { position: absolute; width: 100%; height: 100%; top: 0; left: 0; background: #000; }
 .video-bg { width: 100%; height: 100%; object-fit: cover; }
 
 /* --- TRANSICIÓN DE VIDEO: FUNDIDO A NEGRO --- */
-/* Aumentamos el tiempo a 2.5s para que el paso por el negro sea elegante */
 .video-crossfade-enter-active,
 .video-crossfade-leave-active {
   transition: opacity 2.5s ease-in-out;

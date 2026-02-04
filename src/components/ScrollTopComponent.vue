@@ -24,7 +24,7 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll));
 <template>
   <Transition name="fade">
     <button v-if="isVisible" @click="scrollToTop" class="scroll-top-btn" aria-label="Volver arriba">
-      <!-- Icono de flecha simple -->
+      <!-- Icono de flecha -->
       <span class="arrow">↑</span>
     </button>
   </Transition>

@@ -116,6 +116,5 @@ const rankings = ref([
 /* Mejora visual para la pestaña activa */
 .nav-link.active {
   font-weight: bold;
-  border-bottom: 3px solid #f8c52d !important;
 }
 </style>

@@ -63,7 +63,7 @@ import { onMounted, ref } from 'vue'
 // Importamos los componentes de Bootstrap necesarios
 import { Tooltip, Popover } from 'bootstrap'
 
-// Datos de las noticias para evitar repetir código HTML
+// Datos de las noticias 
 const noticias = ref([
   {
     titulo: 'Tradicional en roca: aventuras en la naturaleza',
